@@ -11,8 +11,14 @@ func SliceDelete[T any](idx int, vals []T) []T {
 		return nil
 	}
 
-	tmp := vals[:]
-	vals = append(vals[:idx], tmp[idx+1:]...)
+	if len(vals)-1 <= cap(vals)/2 {
+		newVals := make([]T, 0, cap(vals)/2)
+		newVals = append(newVals, vals[:idx]...)
+		newVals = append(newVals, vals[idx+1:]...)
+		vals = newVals
+	} else {
+		vals = append(vals[:idx], vals[idx+1:]...)
+	}
 
 	return vals
 }
