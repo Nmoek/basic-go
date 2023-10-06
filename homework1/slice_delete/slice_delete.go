@@ -1,6 +1,8 @@
 package slice_delete
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func SliceDelete[T any](idx int, vals []T) []T {
 

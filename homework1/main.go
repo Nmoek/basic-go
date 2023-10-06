@@ -6,11 +6,11 @@ import (
 	"os"
 )
 
-// @func: functional_test
+// @func: functionalTest
 // @date: 2023年10月1日
 // @brief: 功能性测试
 // @author: Kewin Li
-func functional_test() {
+func functionalTest() {
 
 	vals := []int{1, 2, 3, 4, 5}
 	var res []int
@@ -44,7 +44,7 @@ func main() {
 
 	switch args[1][0] {
 	case '1':
-		functional_test()
+		functionalTest()
 	}
 
 }
